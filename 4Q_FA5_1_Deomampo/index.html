@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA 5 Problem 1</title>
+</head>
+<body>
+    <script>
+        function makeInpt(){
+            var n=prompt("Input number: ");
+            while (isNaN(n) && n!==""){
+                alert("Please enter a number!");
+                var n=prompt("Input number: ");
+            }
+
+            document.write("Number inputted: " + n + "<br>");
+
+            let making = "";
+
+            if (n%2===0){
+                for (let i = n; i >= 1; i--) {
+                    for (let j = 1; j <= i; j++) {
+                        making += i + " ";
+                    }
+                    making += "<br>";
+                }
+            }
+            else{
+                for (let i = n; i >= 1; i--) {
+                    for (let j = 1; j <= n; j++) {
+                        making += i + " ";
+                    }
+                    making += "<br>";
+                }
+            }
+
+            document.write(making);
+        }
+
+        makeInpt();
+
+    </script>
+</body>
+</html>

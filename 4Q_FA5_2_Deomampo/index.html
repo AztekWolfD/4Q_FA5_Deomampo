@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA 5 Problem 2</title>
+</head>
+<body>
+    <form action="index.html">
+        <input type="text" id="name">
+        <input type="button" value="Add" onclick="myAdd()">
+        <input type="button" value="Remove" onclick="myRemove()">
+    </form>
+
+    <div id="namesList"></div>
+
+    <script>
+        var names = [];
+        
+        function myAdd() {
+            var newName = document.getElementById("name").value.trim();
+            if (newName !== "") {
+                if (names.length >= 7) {
+                    names.shift();
+                }
+                names.push(newName);
+                myShow();
+            }
+        }
+
+        function myRemove() {
+            if (names.length > 0) {
+                names.pop();
+                myShow();
+            }
+        }
+
+        function myShow() {
+            var namesList = document.getElementById("namesList");
+            namesList.textContent =  names.join(", ");
+        }
+    </script>
+</body>
+</html>
